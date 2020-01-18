@@ -49,8 +49,11 @@ listed.addEventListener('click', function(event) {
 });
 
 function rstList() {
-  const resetList = document.querySelectorAll('#toDoList li');
-  for (let i = 0 ; i < resetList.length ; i++) {
-    resetList[i].textContent = '';
+  const sure = confirm('are you sure?');
+  if (sure === true) {
+    const resetList = document.querySelectorAll('#toDoList li');
+    for (let i = 0 ; i < resetList.length ; i++) {
+      resetList[i].textContent = '';
+    }
   }
 }

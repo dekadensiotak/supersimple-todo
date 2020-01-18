@@ -44,6 +44,16 @@ ul li {
   font-size: 1.5em;
 }
 
+footer {
+  margin-top: 10px;
+  font-size: smaller;
+}
+
+footer a {
+  text-decoration: underline;
+  color: #000000;
+}
+
 .title {
   margin-bottom: 10px;
 }
