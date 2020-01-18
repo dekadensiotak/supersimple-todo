@@ -6,9 +6,9 @@ const toDoList = document.getElementById('toDoList');
 const rstBtn = document.getElementById('rstBtn');
 
 // date
-const options = {weekday : "long", day:"numeric", month:"short", year:"numeric"};
+const options = {weekday : "long", day:"numeric", month:"long", year:"numeric"};
 const today = new Date();
-time.innerHTML = today.toLocaleDateString("id-ID", options);
+time.textContent = today.toLocaleDateString("id-ID", options);
 
 // focus on input
 inputList.focus();
@@ -37,7 +37,6 @@ function addList() {
   }
 
   inputList.value = '';
-
 }
 
 // strikethrough list when clicked
@@ -48,6 +47,7 @@ listed.addEventListener('click', function(event) {
   }
 });
 
+// reset list
 function rstList() {
   const sure = confirm('are you sure?');
   if (sure === true) {
