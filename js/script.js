@@ -6,7 +6,11 @@ const toDoList = document.getElementById('toDoList');
 const rstBtn = document.getElementById('rstBtn');
 
 // date
-const options = {weekday : "long", day:"numeric", month:"long", year:"numeric"};
+const options = {
+  weekday : "long",
+  day     :"numeric",
+  month   :"long",
+  year    :"numeric"};
 const today = new Date();
 time.textContent = today.toLocaleDateString("id-ID", options);
 
@@ -41,7 +45,7 @@ function addList() {
 
 // strikethrough list when clicked
 const listed = document.querySelector('ul');
-listed.addEventListener('touchend', function(event) {
+listed.addEventListener('click', function(event) {
   if (event.target.tagName === 'LI') {
     event.target.classList.toggle('strikeList');
   }
