@@ -41,7 +41,7 @@ function addList() {
 
 // strikethrough list when clicked
 const listed = document.querySelector('ul');
-listed.addEventListener('click', function(event) {
+listed.addEventListener('touchend', function(event) {
   if (event.target.tagName === 'LI') {
     event.target.classList.toggle('strikeList');
   }
