@@ -31,13 +31,17 @@ rstBtn.addEventListener('click', rstList);
 // adding list
 function addList() {
   const list = document.createElement('li');
+  const alist = document.createElement('a');
+  alist.setAttribute('href', '');
+
   const inputValue = inputList.value;
 
   if (inputValue === '') {
     alert('input tidak boleh kosong!');
   } else {
-    list.textContent = inputValue;
+    alist.textContent = inputValue;
     toDoList.appendChild(list);
+    list.appendChild(alist);
   }
 
   inputList.value = '';
@@ -46,7 +50,8 @@ function addList() {
 // strikethrough list when clicked
 const listed = document.querySelector('ul');
 listed.addEventListener('click', function(event) {
-  if (event.target.tagName === 'LI') {
+  if (event.target.tagName === 'A') {
+    event.preventDefault();
     event.target.classList.toggle('strikeList');
   }
 });
@@ -55,7 +60,7 @@ listed.addEventListener('click', function(event) {
 function rstList() {
   const sure = confirm('are you sure?');
   if (sure === true) {
-    const resetList = document.querySelectorAll('#toDoList li');
+    const resetList = document.querySelectorAll('#toDoList a');
     for (let i = 0 ; i < resetList.length ; i++) {
       resetList[i].textContent = '';
     }
