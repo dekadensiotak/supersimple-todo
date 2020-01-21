@@ -56,6 +56,13 @@ listed.addEventListener('click', function(event) {
   }
 });
 
+listed.addEventListener('touch', function(event) {
+  if (event.target.tagName === 'A') {
+    event.preventDefault();
+    event.target.classList.toggle('strikeList');
+  }
+});
+
 // reset list
 function rstList() {
   const sure = confirm('are you sure?');
